@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>starwars</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Spring Boot REST API Example</name>
     <version>1.0</version>
 
@@ -63,6 +63,13 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
+        
+        <dependency>
+	   		<groupId>org.springframework.boot</groupId>
+	   		<artifactId>spring-boot-starter-tomcat</artifactId>
+	   		<scope>provided</scope>
+		</dependency>
+
 
     </dependencies>
 
