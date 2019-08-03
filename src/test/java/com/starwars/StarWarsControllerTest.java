@@ -31,51 +31,101 @@ public class StarWarsControllerTest {
 
     @Before
     public void init() {
-    }
-    
-    @Test
-    public void testError() throws Exception {
-
-        mockMvc.perform(get("/starwarsPing"))
-                .andExpect(status().isOk());
-
-    }    
+    } 
+ 
     
     @Test
     public void pingTheService() throws Exception {
-
         mockMvc.perform(get("/starwarsPing"))
-                .andExpect(status().isOk());
-
+                .andExpect(status().isOk());   
     }
+    
+  
     @Test
     public void testPlanets() throws Exception {
 
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "planets")
+                .param("name", "Alderaan"))       
+          .andExpect(status().isOk());        
     }
+    
+    @Test
+    public void testPlanetsError() throws Exception {
 
+    }
+    
+    
     @Test
     public void testPeople() throws Exception {
+    	
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "people")
+                .param("name", "C-3PO"))       
+          .andExpect(status().isOk());   
 
     }
+    @Test
+    public void testPeopleError() throws Exception {
+
+    }
+    
     
     @Test
     public void testFilms() throws Exception {
+    	
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "films")
+                .param("name", "A New Hope"))       
+          .andExpect(status().isOk());   
 
     }
+    @Test
+    public void testFilmsError() throws Exception {
+
+    }   
+    
     
     @Test
     public void testSpecies() throws Exception {
+    	
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "species")
+                .param("name", "Hutt"))       
+          .andExpect(status().isOk());   
 
     }
+    @Test
+    public void testSpeciesError() throws Exception {
+
+    }    
+    
     
     @Test
     public void testVehicles() throws Exception {
+    	
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "vehicles")
+                .param("name", "Sand Crawler"))       
+          .andExpect(status().isOk());   
     }
+    @Test
+    public void testVehiclesError() throws Exception {
+    }    
     
     @Test
     public void testStarShips() throws Exception {
+    	
+        mockMvc.perform(get("/starwarsDetails")
+                .param("type", "starships")
+                .param("name", "Executor"))       
+          .andExpect(status().isOk());   
 
     }
+    @Test
+    public void testStarShipsError() throws Exception {
+
+    }   
     
     
 }
