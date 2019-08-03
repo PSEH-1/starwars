@@ -54,7 +54,10 @@ public class StarWarsControllerTest {
                 .param("name", "Alderaan"))       
           .andExpect(status().isOk());
     }
-    
+    @Test
+    public void testPlanetsForCountAndFilms() throws Exception {
+
+    }   
     @Test
     public void testPlanetsError() throws Exception {
 
@@ -70,23 +73,14 @@ public class StarWarsControllerTest {
           .andExpect(status().isOk());   
 
     }
+    
+    @Test
+    public void testPeopleForCountAndFilms() throws Exception {
+
+    }   
+    
     @Test
     public void testPeopleError() throws Exception {
-
-    }
-    
-    
-    @Test
-    public void testFilms() throws Exception {
-    	
-        mockMvc.perform(get("/starwarsDetails")
-                .param("type", "films")
-                .param("name", "A New Hope"))       
-          .andExpect(status().isOk());   
-
-    }
-    @Test
-    public void testFilmsError() throws Exception {
 
     }   
     
@@ -100,6 +94,10 @@ public class StarWarsControllerTest {
           .andExpect(status().isOk());   
 
     }
+    @Test
+    public void testSpeciesForCountAndFilms() throws Exception {
+
+    }   
     @Test
     public void testSpeciesError() throws Exception {
 
@@ -115,9 +113,13 @@ public class StarWarsControllerTest {
           .andExpect(status().isOk());   
     }
     @Test
+    public void testVehiclesForCountAndFilms() throws Exception {
+
+    }
+    @Test
     public void testVehiclesError() throws Exception {
-    }    
-    
+    }        
+
     @Test
     public void testStarShips() throws Exception {
     	
@@ -125,6 +127,12 @@ public class StarWarsControllerTest {
                 .param("type", "starships")
                 .param("name", "Executor"))       
           .andExpect(status().isOk());   
+
+    }
+    
+    @Test
+    public void testStarShipsForCountAndFilms() throws Exception {
+
 
     }
     @Test
