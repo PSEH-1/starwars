@@ -10,7 +10,10 @@ import org.springframework.web.client.RestTemplate;
 import com.starwars.util.*;
 
 public class StarWarsService {	
-	
+	/*
+	 pass type and name as arguments.
+	 type can be planets, people etc.
+	 */
 	public static Result getDetails(String type,String name){
 		RestTemplate restTemplate = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
@@ -18,7 +21,7 @@ public class StarWarsService {
 		headers.add("user-agent", "*");
 		HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
 		Object response = restTemplate.exchange("https://swapi.co/api/"+type, HttpMethod.GET,entity,Object.class);        
-		//TBD Response to be parsed
+		//TBD - JSON parser to be used here
 		Result result = new Result();
 		result.setType(type);
 		result.setName(name);
