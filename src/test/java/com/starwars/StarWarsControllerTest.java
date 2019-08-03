@@ -40,6 +40,11 @@ public class StarWarsControllerTest {
                 .andExpect(status().isOk());   
     }
     
+    @Test
+    public void testError404() throws Exception {
+        mockMvc.perform(get("/starwarsPingError"))
+                .andExpect(status().is4xxClientError());   
+    }    
   
     @Test
     public void testPlanets() throws Exception {
@@ -47,7 +52,7 @@ public class StarWarsControllerTest {
         mockMvc.perform(get("/starwarsDetails")
                 .param("type", "planets")
                 .param("name", "Alderaan"))       
-          .andExpect(status().isOk());        
+          .andExpect(status().isOk());
     }
     
     @Test
