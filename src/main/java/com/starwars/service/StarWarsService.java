@@ -25,6 +25,7 @@ public class StarWarsService {
 		Result result = new Result();
 		result.setType(type);
 		result.setName(name);
+		result.setFilms("ToBeDone");
 		result.setCount(response.toString().substring(response.toString().indexOf("<200,{count=")+12,response.toString().indexOf(", next")));
 		return result;
 	}
@@ -32,7 +33,7 @@ public class StarWarsService {
 	public static void main(String args[]) {
 	       
 		StarWarsService st = new StarWarsService();
-		System.out.println(st.getDetails("planets","rosewin"));
+		System.out.println(st.getDetails("planets","Alderaan"));
 	}
 	
 }

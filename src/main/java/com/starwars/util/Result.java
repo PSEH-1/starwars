@@ -9,13 +9,6 @@ public class Result {
 	private String name;
 	private String films;
 	
-	public Result() {
-		super();
-		this.type = type;
-		this.count = count;
-		this.name = name;
-		this.films = "TBD";
-	}
 	public String getType() {
 		return type;
 	}
